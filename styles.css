@@ -47,53 +47,77 @@ html {
   text-align: center;
   z-index: 2;
 }
-
 .navbar {
-  z-index: 10; /* S'assurer qu'elle reste au-dessus des autres éléments */
-  position: fixed; /* La fixer en haut */
-  top: 0; /* Position verticale */
-  left: 0;
-  width: 100%; /* Prend toute la largeur */
-  padding: 10px 0;
-  background-color: #000421; /* Couleur de fond semi-transparente */
   display: flex;
-  justify-content: center;
-  padding-top: 35px;
-  padding-bottom: 35px;
-  backdrop-filter: blur(
-    10px
-  ); /* Optionnel : effet flou pour un design moderne */
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #000421;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
-.navbar ul {
-  list-style-type: none;
+.nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.navbar ul li a {
-  color: #ffffff;
-  padding: 10px 15px;
+.nav-links li {
+  padding: 10px;
+}
+
+.nav-links a {
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.navbar ul li a:hover {
-  color: #a0a0a0;
+.nav-links a:hover {
+  color: #a259ff;
 }
 
-/*corresponds au cadre de la page d'acceuille*/
+/* --- Menu Burger (Mobile) --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  background-color: white;
+  height: 4px;
+  width: 30px;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
 .presentation-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 350px;
-  z-index: 10;
-  background-color: rgba(22, 21, 21, 0.5);
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   padding: 20px;
-  border-radius: 10px;
+}
+
+.presentation-container h1 {
+  font-size: 2rem; /* Taille du titre ajustable */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.presentation-container p {
+  font-size: 1.2rem;
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 .vertical-line {
@@ -140,6 +164,9 @@ html {
     opacity: 1;
     transform: translateY(0); /* Position finale */
   }
+}
+.tech {
+  color: #ffffff;
 }
 
 .title {
@@ -935,7 +962,7 @@ html {
 
 .project-image img {
   width: 100%;
-  height: auto;
+  height: 250px;
   transform: rotateY(45deg);
   transition: transform 0.3s ease;
   border-radius: 15px;
@@ -964,6 +991,10 @@ html {
   color: #b0b0b0;
   margin-bottom: 20px;
   text-align: left;
+}
+
+.project-btn a {
+  color: #f5f2f2;
 }
 
 /* Bouton violet */
@@ -2042,4 +2073,108 @@ a {
 .carouselveille__item[data-pos="2"] {
   transform: translateX(70%) scale(0.8);
   z-index: 3;
+}
+#section-btssio {
+  margin-bottom: 300px;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 4, 33, 0.9);
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cards-container {
+    flex-direction: column;
+  }
+
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentation-container {
+    flex-direction: column; /* Empiler les éléments */
+    text-align: center;
+    max-width: 95%;
+    margin-bottom: 600px;
+  }
+
+  .presentation-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .presentation-container p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .avatar {
+    margin-bottom: 25px;
+  }
+
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .right-section .description {
+    font-size: 1rem;
+    padding: 45px;
+    text-align: center;
+  }
+  .cards-container {
+    margin-bottom: 100px;
+  }
+  .skills-section {
+    margin-top: 500px;
+  }
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  #section-btssio {
+    margin-bottom: 1000px;
+  }
+  .cards-container-ecole {
+    flex-direction: column;
+  }
+  #contact-section {
+    height: 180vh;
+  }
 }
