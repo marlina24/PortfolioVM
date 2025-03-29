@@ -702,6 +702,22 @@ html {
   text-align: center;
 }
 
+.btn {
+  margin: 3px auto;
+  padding: 1px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
 /* Titre de la section */
 .section-title-container {
   margin-bottom: 40px;
